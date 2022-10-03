@@ -1,0 +1,31 @@
+<html lang='en'>
+    <head>
+        <title>Patient</title>
+        <style>
+            div {
+                margin: 3cm;
+            }
+            div > p {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Enter the Patient's details:</h1><hr>
+        <div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <p>Enter First Name: </p><input id='firstname' name='firstname' type='text' placeholder='First Name'>
+                <p>Enter Last Name: </p><input id='lastname' name='lastname' type='text' placeholder='Last Name'>
+                <p>Enter Username: </p><input id='username' name='username' type='text' placeholder='Username'>
+                <p>Enter Email: </p><input id='email' name='email' type='text' placeholder='Email'>
+                <p>Enter Password: </p><input id='password' name='password' type='password' placeholder='password'>
+                <p>Confirm Password: </p><input id='confirmpassword' name='confirmpassword' type='password' placeholder='Confirm Password'>
+                <p id='passwordresult'></p>
+                <p>Enter Address: </p><input id='address' name='address' type='text' placeholder='Address'>
+                <br><br>
+                <input id='submit' type='submit' value='POST' > 
+            </form>
+        </div>
+    </body>
+</html>
