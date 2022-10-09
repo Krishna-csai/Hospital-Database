@@ -2,17 +2,35 @@
     <head>
         <title>Patient</title>
         <style>
-            div {
+            #patientform {
                 margin: 3cm;
             }
-            div > p {
+            #patientform > p {
                 font-size: 20px;
             }
+            #buttons {
+                margin: 3cm;
+                size: 30px;
+            }
         </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector("#newpatient").onclick = function() {
+                    document.querySelector("#patientform").style.display = 'block';
+                }
+                document.querySelector("#blogs").onclick = function() {
+                    window.location.href='http://127.0.0.1:8000/blogs';
+                }
+            })
+        </script>
     </head>
     <body>
-        <h1>Enter the Patient's details:</h1><hr>
-        <div>
+        <div id='buttons'>
+            <button id='newpatient' style='font-size: 25px;  padding: 20px; border-radius: 30px; background-color: skyblue;'>Create New Patient</button><br><br><br><br>
+            <button id='blogs'  style='font-size: 25px;  padding: 20px;  border-radius: 30px; background-color: skyblue;'>View Blogs</button>
+        </div>
+            <div id='patientform' style='display: none;'>
+            <h1>Enter the Patient's details:</h1><hr>
             <form action="" method="post">
                 {% csrf_token %}
                 <p>Enter First Name: </p><input id='firstname' name='firstname' type='text' placeholder='First Name'>

@@ -23,3 +23,27 @@ class Patient(models.Model):
     
     def __str__(self):
         return self.username
+    
+class Post(models.Model):
+    class choices(models.TextChoices):
+        MentalHealth = "1", "Mental Health"
+        HeartDiseases = "2", "Heart Diseases"
+        Covid19 = "3", "Covid19"
+        Immunization = "4", "Immunization"
+        
+    title = models.CharField(max_length = 200)
+    image = models.ImageField()
+    category = models.CharField(
+        max_length = 20,
+        choices=choices.choices,
+        default=choices.MentalHealth
+    )
+    summary = models.TextField()
+    content = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ['-date_added']
+        
+    def __str__(self):
+        return self.title    

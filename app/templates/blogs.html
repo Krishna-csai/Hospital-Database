@@ -1,0 +1,50 @@
+<html lang='en'>
+    <head>
+        <title>Patient Blogs</title>
+        <style>
+            button {
+                font-size: 25px;
+                padding: 10px;
+                border-style: none;
+            }
+            body {
+                margin: 3cm;
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector("#mentalhealth").onclick = function() {
+                    window.location.href = 'http://127.0.0.1:8000/mentalhealth';
+                }
+                document.querySelector("#heartdiseases").onclick = function() {
+                    window.location.href = 'http://127.0.0.1:8000/heartdiseases';
+                }
+                document.querySelector("#covid19").onclick = function() {
+                    window.location.href = 'http://127.0.0.1:8000/covid19';
+                }
+                document.querySelector("#immunization").onclick = function() {
+                    window.location.href = 'http://127.0.0.1:8000/immunization';
+                }
+            })
+        </script>
+    </head>
+    <body style='text-align: center;'>
+        <h1>Select a Category from the given choices:</h1>
+        <button id='mentalhealth'>Mental Health</button>
+        <button id='heartdiseases'>Heart Diseases</button>
+        <button id='covid19'>Covid19</button>
+        <button id='immunization'>Immunization</button>
+        <hr>
+        <div>
+            {% for posts in posts %}
+                <a href='{% url "viewblog" posts.title %}'>
+                <h2 style='font-size: 50px;'>{{ posts.title }}</h2>
+                {{ posts.image }}
+                <h3 style='font-size: 30px'>Posted at {{ posts.date_added }}</h3>
+                <h3 style='font-size: 30px'>{{ posts.summary }}</h3>
+                </a>
+                <hr><hr>
+                {%endfor%}
+        </div>
+    </body>
+</html>

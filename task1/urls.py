@@ -23,4 +23,10 @@ urlpatterns = [
     path('', views.home, name='homepage'),
     path('doctor', views.doctor, name='doctor'),
     path('patient', views.patient, name='patient'),
+    path('blogs' , views.blogs , name='blogs'),
+    path('viewblog/<title>', views.viewblog , name='viewblog'),
+    path('mentalhealth', views.mentalhealth, name='viewmentalhealth'),
+    path('heartdiseases', views.heartdieseases, name='viewheartdiseases'),
+    path('covid19', views.covid19, name='viewcovid19'),
+    path('immunization', views.immunization, name='viewimmunization'),
 ]

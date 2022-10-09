@@ -1,3 +1,3 @@
 # task
 
-This is a website that can be used to maintain record of doctor's and patient's in a hospital. It has two seperate databases for both of those and you can enter new users by clicking on the buttons given on the homepage. 
+A website that allows to store multiple doctors and patients in different databases. And allow the doctors to create blogs which can be seen by the patients depending on the category selected by the patients.

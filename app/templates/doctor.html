@@ -2,17 +2,41 @@
     <head>
         <title>Doctor</title>
         <style>
-            div {
+            #newdoctor {
                 margin: 3cm;
             }
-            div > p {
+            #newdoctor > p {
                 font-size: 20px;
             }
+            #buttons {
+                margin: 3cm;
+                size: 30px;
+            }
         </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector("#newuser").onclick = function() {
+                    document.querySelector('#newdoctor').style.display = 'block' ;
+                }
+                document.querySelector("#newblog").onclick = function() {
+                    window.location.href = 'http://127.0.0.1:8000/admin/app/post/add/';
+                }
+                document.querySelector("#blogs").onclick = function() {
+                    window.location.href = 'http://127.0.0.1:8000/blogs';
+                }
+            })
+        </script>
     </head>
     <body>
-        <h1>Enter the Doctor's details:</h1><hr>
-        <div>
+        <div id='buttons'>
+            <button id='newblog' style='font-size: 25px;  border-radius: 30px; background-color: skyblue; padding: 20px;'>Create New Blog</button><br>
+            <br><br><br><br>
+            <button id='blogs' style='font-size: 25px;  border-radius: 30px; background-color: skyblue; padding: 20px;'>View Blogs</button><br>
+            <br><br><br><br>
+            <button id='newuser' style='font-size: 25px;  border-radius: 30px; background-color: skyblue; padding: 20px;'>Create New User</button>
+        </div>
+        <div id='newdoctor' style='display: none;'>
+            <h1>Enter the Doctor's details:</h1><hr>
             <form action="" method="post">
                 {% csrf_token %}
                 <p>Enter First Name: </p><input id='firstname' name='firstname' type='text' placeholder='First Name'>

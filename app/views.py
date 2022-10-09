@@ -1,10 +1,36 @@
 from django.shortcuts import render
-from .models import Doctor, Patient
+from .models import Doctor, Patient, Post
 from django.http import HttpResponse, JsonResponse
 
 # Create your views here.
 def home(request):
     return render(request, 'homepage.html')
+
+def blogs(request):
+    posts = Post.objects.all()
+    return render(request, 'blogs.html' , { 'posts': posts })
+
+def mentalhealth(request):
+    posts = Post.objects.filter(category ='1')
+    return render(request, 'blogs.html' , { 'posts': posts })
+
+def heartdieseases(request):
+    posts = Post.objects.filter(category ='2')
+    return render(request, 'blogs.html' , { 'posts': posts })
+
+def covid19(request):
+    posts = Post.objects.filter(category ='3')
+    return render(request, 'blogs.html' , { 'posts': posts })
+
+def immunization(request):
+    posts = Post.objects.filter(category = '4')
+    return render(request, 'blogs.html' , { 'posts': posts })
+
+
+
+def viewblog(request, title):
+    posts = Post.objects.get(title=title)
+    return render(request, 'detail.html', {'posts': posts})
     
 def doctor(request):
         if request.method == 'POST':
