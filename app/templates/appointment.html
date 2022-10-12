@@ -1,0 +1,17 @@
+<html lang="en">
+  <head>
+    <title>Book Appointment</title>
+  </head>
+  <body>
+    <div>
+      <h1>All the Docotr's are Listed below:</h1>
+      <hr />
+      {% for doctor in doctors %}
+      <h1>{{doctor.firstname}} {{doctor.lastname}}</h1>
+      {{doctor.profile}}
+      <hr />
+      <a href='{% url "appointmentform" doctor.username %}'>Book Appointment</a>
+      {%endfor%}
+    </div>
+  </body>
+</html>

@@ -1,8 +1,10 @@
 from django.db import models
+from datetime import timedelta
 
 # Create your models here.
 class Doctor(models.Model):
     firstname = models.CharField(max_length = 15)
+    profile = models.ImageField(default='default.jpg')
     lastname = models.CharField(max_length = 15)
     username = models.CharField(max_length = 25)
     email = models.EmailField(max_length = 100)
@@ -47,3 +49,10 @@ class Post(models.Model):
         
     def __str__(self):
         return self.title    
+
+class Appointment(models.Model):
+    doctor = models.TextField(max_length=50)
+    speciality = models.TextField(max_length=50)
+    date = models.DateField()
+    time = models.TimeField()
+    endtime = models.TextField()

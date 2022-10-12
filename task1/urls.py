@@ -29,4 +29,7 @@ urlpatterns = [
     path('heartdiseases', views.heartdieseases, name='viewheartdiseases'),
     path('covid19', views.covid19, name='viewcovid19'),
     path('immunization', views.immunization, name='viewimmunization'),
+    path('appointment', views.appointment, name='allappointments'),
+    path('createappointment/<name>', views.createappointment , name='appointmentform'),
+    path('calender/', views.calender, name='calender'),
 ]

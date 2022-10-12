@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Create a Post</title>
+  </head>
+
+  <body>
+    <h1>Create a Post</h1>
+    <form action="" method="POST">
+      {% csrf_token %} Required Speciality:
+      <input type="text" name="speciality" /><br />
+      Date of Appointment: <input name='date' type="date" /></br>
+      Time of Appointment:
+      <input name='time' type="time" /></br>
+      <input type="submit" value="Post" />
+    </form>
+  </body>
+</html>
