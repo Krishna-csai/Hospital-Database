@@ -21,8 +21,7 @@ from app import models
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='homepage'),
-    path('doctor', views.doctor, name='doctor'),
-    path('patient', views.patient, name='patient'),
+    path('addperson', views.addperson, name='addperson'),
     path('blogs' , views.blogs , name='blogs'),
     path('viewblog/<title>', views.viewblog , name='viewblog'),
     path('mentalhealth', views.mentalhealth, name='viewmentalhealth'),
@@ -31,5 +30,5 @@ urlpatterns = [
     path('immunization', views.immunization, name='viewimmunization'),
     path('appointment', views.appointment, name='allappointments'),
     path('createappointment/<name>', views.createappointment , name='appointmentform'),
-    path('calender/', views.calender, name='calender'),
+    path('login', views.login , name='login'),
 ]

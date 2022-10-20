@@ -1,39 +1,25 @@
 <html lang="en">
   <head>
-    <title>Choose Field</title>
-    <style>
-      div {
-        margin: 3cm;
-      }
-      #patient,
-      #doctor {
-        width: 5cm;
-        height: 2cm;
-        background-color: skyblue;
-        border-radius: 50px;
-      }
-    </style>
+    <title>Add Person</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("#adduser").onclick = function () {
+          window.location.href = "http://127.0.0.1:8000/addperson";
+        };
+        document.querySelector("#login").onclick = function () {
+          window.location.href = "http://127.0.0.1:8000/login";
+        };
+      });
+    </script>
   </head>
-  <body>
+  <body style="margon-left: 3cm">
     <header>
-      <h1 style="margin-left: 3cm">Django Task - 1</h1>
+      <h1>Django Task - 1</h1>
     </header>
     <hr />
-    <div>
-      <h1>Choose a field...</h1>
-      <br />
-      <button
-        id="doctor"
-        onclick="location.href='http://127.0.0.1:8000/doctor';"
-      >
-        Doctor
-      </button>
-      <button
-        id="patient"
-        onclick="location.href='http://127.0.0.1:8000/patient';"
-      >
-        Patient
-      </button>
+    <div style="margin-left: 3cm">
+      <button id="adduser">Add New User</button>
+      <button id="login">Login</button>
     </div>
   </body>
 </html>

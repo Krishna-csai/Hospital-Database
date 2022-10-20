@@ -1,27 +1,20 @@
+from email.policy import default
 from django.db import models
 from datetime import timedelta
 
 # Create your models here.
-class Doctor(models.Model):
+class AddPerson(models.Model):
     firstname = models.CharField(max_length = 15)
     profile = models.ImageField(default='default.jpg')
     lastname = models.CharField(max_length = 15)
     username = models.CharField(max_length = 25)
     email = models.EmailField(max_length = 100)
     password = models.CharField(max_length = 50)
-    address = models.CharField(max_length = 200)
-    
-    def __str__(self):
-        return self.username
-    
-
-class Patient(models.Model):
-    firstname = models.CharField(max_length = 15)
-    lastname = models.CharField(max_length = 15)
-    username = models.CharField(max_length = 25)
-    email = models.EmailField(max_length = 100)
-    password = models.CharField(max_length = 50)
-    address = models.CharField(max_length = 200)
+    addressline1 = models.CharField(max_length = 200)
+    city = models.CharField(max_length=50, default='Ghaziabad')
+    state = models.CharField(max_length=50, default='UP')
+    pincode = models.IntegerField(default=0)
+    category = models.CharField(max_length = 20, null=True )
     
     def __str__(self):
         return self.username

@@ -1,55 +1,54 @@
-<html lang='en'>
-    <head>
-        <title>Doctor</title>
-        <style>
-            #newdoctor {
-                margin: 3cm;
-            }
-            #newdoctor > p {
-                font-size: 20px;
-            }
-            #buttons {
-                margin: 3cm;
-                size: 30px;
-            }
-        </style>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                document.querySelector("#newuser").onclick = function() {
-                    document.querySelector('#newdoctor').style.display = 'block' ;
-                }
-                document.querySelector("#newblog").onclick = function() {
-                    window.location.href = 'http://127.0.0.1:8000/admin/app/post/add/';
-                }
-                document.querySelector("#blogs").onclick = function() {
-                    window.location.href = 'http://127.0.0.1:8000/blogs';
-                }
-            })
-        </script>
-    </head>
-    <body>
-        <div id='buttons'>
-            <button id='newblog' style='font-size: 25px;  border-radius: 30px; background-color: skyblue; padding: 20px;'>Create New Blog</button><br>
-            <br><br><br><br>
-            <button id='blogs' style='font-size: 25px;  border-radius: 30px; background-color: skyblue; padding: 20px;'>View Blogs</button><br>
-            <br><br><br><br>
-            <button id='newuser' style='font-size: 25px;  border-radius: 30px; background-color: skyblue; padding: 20px;'>Create New User</button>
-        </div>
-        <div id='newdoctor' style='display: none;'>
-            <h1>Enter the Doctor's details:</h1><hr>
-            <form action="" method="post">
-                {% csrf_token %}
-                <p>Enter First Name: </p><input id='firstname' name='firstname' type='text' placeholder='First Name'>
-                <p>Enter Last Name: </p><input id='lastname' name='lastname' type='text' placeholder='Last Name'>
-                <p>Enter Username: </p><input id='username' name='username' type='text' placeholder='Username'>
-                <p>Enter Email: </p><input id='email' name='email' type='text' placeholder='Email'>
-                <p>Enter Password: </p><input id='password' name='password' type='password' placeholder='password'>
-                <p>Confirm Password: </p><input id='confirmpassword' name='confirmpassword' type='password' placeholder='Confirm Password'>
-                <p id='passwordresult'></p>
-                <p>Enter Address: </p><input id='address' name='address' type='text' placeholder='Address'>
-                <br><br>
-                <input id='submit' type='submit' value='POST' > 
-            </form>
-        </div>
-    </body>
+<html lang="en">
+  <head>
+    <title>Doctor</title>
+    <style>
+      #newdoctor {
+        margin: 3cm;
+      }
+      #newdoctor > p {
+        font-size: 20px;
+      }
+      #buttons {
+        margin: 3cm;
+        size: 30px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("#newblog").onclick = function () {
+          window.location.href = "http://127.0.0.1:8000/admin/app/post/add/";
+        };
+        document.querySelector("#blogs").onclick = function () {
+          window.location.href = "http://127.0.0.1:8000/blogs";
+        };
+      });
+    </script>
+  </head>
+  <body>
+    <div id="buttons">
+      <button
+        id="newblog"
+        style="
+          font-size: 25px;
+          border-radius: 30px;
+          background-color: skyblue;
+          padding: 20px;
+        "
+      >
+        Create New Blog</button
+      ><br />
+      <br /><br /><br /><br />
+      <button
+        id="blogs"
+        style="
+          font-size: 25px;
+          border-radius: 30px;
+          background-color: skyblue;
+          padding: 20px;
+        "
+      >
+        View Blogs</button
+      ><br />
+    </div>
+  </body>
 </html>

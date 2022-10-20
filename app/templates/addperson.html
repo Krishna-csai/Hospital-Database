@@ -1,0 +1,78 @@
+<html lang="en">
+  <head>
+    <title>Add New User</title>
+  </head>
+  <body>
+    <div id="newuser">
+      <h1>Enter the User's details:</h1>
+      <hr />
+      <form action="" method="post" style="margin-left: 3cm">
+        {% csrf_token %}
+        <p>Enter First Name:</p>
+        <input
+          id="firstname"
+          name="firstname"
+          type="text"
+          placeholder="First Name"
+        />
+        <p>Enter Last Name:</p>
+        <input
+          id="lastname"
+          name="lastname"
+          type="text"
+          placeholder="Last Name"
+        />
+        <p>Enter Category:</p>
+        <input
+          id="category"
+          name="category"
+          type="text"
+          placeholder="Doctor / Patient"
+        />
+        <p>Enter Username:</p>
+        <input
+          id="username"
+          name="username"
+          type="text"
+          placeholder="Username"
+        />
+        <p>Enter Email:</p>
+        <input id="email" name="email" type="text" placeholder="Email" />
+        <p>Enter Password:</p>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="password"
+        />
+        <p>Confirm Password:</p>
+        <input
+          id="confirmpassword"
+          name="confirmpassword"
+          type="password"
+          placeholder="Confirm Password"
+        />
+        <p>Enter Address Line 1:</p>
+        <input
+          id="addressline1"
+          name="addressline1"
+          type="text"
+          placeholder="Address Line 1"
+        />
+        <p>Enter City:</p>
+        <input id="city" name="city" type="text" placeholder="City" />
+        <p>Enter State:</p>
+        <input id="state" name="state" type="text" placeholder="State" />
+        <p>Enter Pincode:</p>
+        <input
+          id="pincode"
+          name="pincode"
+          type="number"
+          placeholder="Pincode"
+        />
+        <br /><br />
+        <input id="submit" type="submit" value="Add User" />
+      </form>
+    </div>
+  </body>
+</html>
