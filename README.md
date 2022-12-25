@@ -1,4 +1,4 @@
-# task
+# Hospital-Management
 
 A website that allows to store personal and professioal information about multiple doctors and patients in different databases. <br>
 It also allow the patients book appointments to a specific doctor.<br>
